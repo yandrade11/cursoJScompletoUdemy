@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercício IMC moderado</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <section class="container duas-colunas">
+        <p class="col-1">
+            <ul>
+                <li>
+                    <b>IMC</b>
+                </li>
+                <li>
+                    Menos do que 18,5
+                </li>
+                <li>
+                    Entre 18,5 e 24,9
+                </li>
+                <li>
+                    Entre 25 e 29,9
+                </li>
+                <li>
+                    Entre 30 e 34,9
+                </li>
+                <li>
+                    Entre 35 e 39,9
+                </li>
+                <li>
+                    Mais do que 40
+                </li>
+            </ul>
+        </p>
+
+        <p class="col-2">
+            <ul>
+                <li>
+                    <b>Resultado</b>
+                </li>
+                <li>
+                    Abaixo do peso
+                </li>
+                <li>
+                    Peso normal
+                </li>
+                <li>
+                    Sobrepeso
+                </li>
+                <li>
+                    Obesidade grau 1
+                </li>
+                <li>
+                    Obesidade grau 2
+                </li>
+                <li>
+                    Obesidade grau 3
+                </li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="container">
+        <form action="" method="GET" class="formulario">
+            <h1>Calcule seu IMC: </h1>
+            <p class="textLabel">Peso:</p>
+            <input type="text" class="textBox" id="peso">
+
+            <p class="textLabel">Altura:</p>
+            <input type="text" class="textBox" id="altura">
+
+            <button class="btn">Enviar</button>
+
+            <div class=campoInvisivelIMC>
+                <p class="textLabel" type="hidden">Seu IMC é: </p>
+                <input type="text" class="textBox" id="imc" readonly="true">
+            </div>
+
+        </form>
+    </section>
+
+    <script src="./assets/js/index.js"></script>
+
+</body>
+
+</html>

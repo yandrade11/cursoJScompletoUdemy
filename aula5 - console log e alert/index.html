@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Minha primeira página HTML</title>
+
+    <script>
+        /*tipo 1: esta não é uma boa prática porque dependendo do código desenvolvido 
+        retarda o carregamento da página.*/
+        console.log('Tipo de chamada de script 1');
+    </script>
+</head>
+
+<body>
+
+
+    <script>
+        /* tipo 2: esta é a forma aconselhada, no final do body, para que o script 
+        seja a última coisa à carregar na página. Mas não chamando a tag script, e 
+        sim importando o arquivo de script*/
+        console.log('Tipo de chamada de script 2');
+    </script>
+
+    <!-- este é o jeito mais aconselhado de chamada de script -->
+    <script src="../aula5/js/index.js"></script>
+</body>
+
+</html>

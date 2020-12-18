@@ -1,0 +1,58 @@
+/* como criar uma variavel em css puro */
+:root {
+    --cor-primaria: rgb(118, 146, 104);
+    --cor-secundaria: rgb(86, 136, 60);
+}
+
+/* como utilizar essa variavel */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-primaria);
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 50px auto;
+    max-width: 640px;
+    padding: 20px;
+    text-align: justify;
+}
+
+.textLabel {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+.textBox {
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    width: 200px;
+}
+
+/* quando selecionado pinta a borda */
+form input:focus {
+    outline: 1px solid var(--cor-primaria);     
+}
+
+.btn {
+    display: block;
+    border: none;
+    background-color: var(--cor-secundaria);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px auto;
+    height: 40px;
+    width: 90px;
+}
+
+.btn:hover {
+    background-color: var(--cor-primaria);
+}
