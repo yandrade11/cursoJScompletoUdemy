@@ -3,7 +3,7 @@ let indice = 0;
 
 while (indice <= 10) {
     console.log(indice);
-    indice++;
+    indice++;               //geralmente o incremento do indce é no final do while, mas se tiver CONTINUE ou BREAK no seu while, colocar ANTES deles.
 }
 
 console.log('\n-------------------------------\n');
