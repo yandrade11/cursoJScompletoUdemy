@@ -1,5 +1,5 @@
 function randomTime(min = 1000, max = 3000) {
-  const num = Math.random() * (max - min) + min; //numero randomico
+  const num = Math.random() * (max - min) + min; //numero randomico entre 1000 e 3000
 
   return Math.floor(num);
 }
@@ -35,8 +35,8 @@ function f3(callback) {
 // });
 
 //======================================================================================//
-//MELHOR ESCRITA
 
+//MELHOR ESCRITA
 f1(f1Callback);
 
 function f1Callback() {
