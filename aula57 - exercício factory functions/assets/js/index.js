@@ -30,7 +30,7 @@ function createCalculator() {
           //não repetir caracter
           if (
             element.classList.contains("non-repeat") &&
-            this.display.value.slice(-1) === element.value
+            this.display.value.slice(-1) === element.value //trocar this.display.value por variável
           ) {
             return;
           }
@@ -56,7 +56,7 @@ function createCalculator() {
 
           //apagar
           if (element.classList.contains("erase-btn"))
-            this.display.value = this.display.value.slice(0, -1);
+            this.display.value = this.display.value.slice(0, -1); //trocar this.display.value por variável
 
           //executa conta
           if (element.classList.contains("equal-btn")) {
@@ -68,19 +68,19 @@ function createCalculator() {
     },
 
     clearDisplay() {
-      this.display.value = "";
+      this.display.value = ""; //trocar this.display.value por variável
     },
 
     showElementDisplay(valor) {
-      this.display.value += valor;
+      this.display.value += valor; //trocar this.display.value por variável
     },
 
     executeCount() {
       //eval() = executa javascript no código dentro do parentese
-      let count = this.display.value;
+      let count = this.display.value; //trocar this.display.value por variável
 
       try {
-        this.display.value = eval(count);
+        this.display.value = eval(count); //trocar this.display.value por variável
 
         if (!count) {
           alert("Cálculo inválido.");
