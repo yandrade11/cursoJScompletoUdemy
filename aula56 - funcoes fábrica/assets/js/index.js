@@ -1,4 +1,4 @@
-//FACTORY FUNCTION (FUNÇÃO FÁBRICA)
+//FACTORY FUNCTION (FUNÇÃO FÁBRICA) objetivo: retornar um objeto
 
 function criaPessoa(nome, sobrenome) {
   return {                                          
