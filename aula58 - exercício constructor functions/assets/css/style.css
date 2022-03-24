@@ -1,0 +1,54 @@
+/* como criar uma variavel em css puro */
+:root {
+  --cor-primaria: rgb(118, 146, 104);
+  --cor-secundaria: rgb(86, 136, 60);
+}
+
+/* como utilizar essa variavel */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-primaria);
+  font-family: sans-serif;
+}
+
+.container {
+  background-color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 50px auto;
+  max-width: 400px;
+  padding: 20px;
+  text-align: justify;
+}
+
+.container input.inputValue {
+  cursor: not-allowed;
+  height: 35px;
+  width: -webkit-fill-available;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  margin: 5px auto;
+}
+
+div input {
+  width: 95px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+input:not(.inputValue) {
+  cursor: pointer;
+}
+
+input.equal-btn:hover {
+  background-color: var(--cor-primaria);
+}
+
+input.clear-btn:hover {
+    background-color: rgb(201, 50, 50);
+    color: white;
+}
