@@ -11,9 +11,7 @@ function Calculator(display) {
   //forma diferente de fazer método com arrow e com function
   this.pressEnterToExecute = function () {
     display.addEventListener("keyup", (element) => {
-      if (element.keyCode === 13) {
-        this.executeCount();
-      }
+      if (element.keyCode === 13) this.executeCount();
     });
   };
 
@@ -28,10 +26,9 @@ function Calculator(display) {
       //não repetir caracter
       if (
         element.classList.contains("non-repeat") &&
-        display.value.slice(-1) === element.value //trocar display.value por variável
-      ) {
+        display.value.slice(-1) === element.value
+      )
         return;
-      }
 
       //mostrar caracter no display
       if (
@@ -39,43 +36,35 @@ function Calculator(display) {
         element.classList.contains("open-parentheses-btn") ||
         element.classList.contains("close-parentheses-btn") ||
         element.classList.contains("point-btn")
-      ) {
+      )
         callFunction.showElementDisplay(element.value);
-      }
 
       //operadores
-      if (element.classList.contains("operator-btn")) {
+      if (element.classList.contains("operator-btn"))
         callFunction.showElementDisplay(element.value);
-      }
 
       //limpar
       if (element.classList.contains("clear-btn")) callFunction.clearDisplay();
 
       //apagar
-      if (element.classList.contains("erase-btn"))
-        display.value = display.value.slice(0, -1); //trocar display.value por variável
+      if (element.classList.contains("erase-btn")) callFunction.delete();
 
       //executa conta
-      if (element.classList.contains("equal-btn")) {
-        callFunction.executeCount();
-      }
+      if (element.classList.contains("equal-btn")) callFunction.executeCount();
     });
   };
 
-  this.clearDisplay = () => {
-    display.value = ""; //trocar display.value por variável
-  };
-
-  this.showElementDisplay = (valor) => {
-    display.value += valor; //trocar display.value por variável
-  };
-
+  //função de uma linha também não precisa de chaves e ;
+  this.showElementDisplay = (valor) => (display.value += valor);
+  this.clearDisplay = () => (display.value = "");
+  this.delete = () => (display.value = display.value.slice(0, -1));
   this.executeCount = () => {
-    //eval() = executa javascript no código dentro do parentese
-    let count = display.value; //trocar display.value por variável
+    //eval() = executa qualquer código javascript dentro do parentese
+    //portanto não é aconselhável utilizar pois facilita o trabalho de hackers
+    let count = display.value;
 
     try {
-      display.value = eval(count); //trocar display.value por variável
+      display.value = eval(count);
 
       if (!count) {
         alert("Cálculo inválido.");
