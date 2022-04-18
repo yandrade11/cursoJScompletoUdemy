@@ -20,6 +20,7 @@ function createCalculator() {
     handleClick() {
       //this = calculadora
       document.addEventListener(
+        //this = evento do botão
         "click",
         function (event) {
           const element = event.target;
