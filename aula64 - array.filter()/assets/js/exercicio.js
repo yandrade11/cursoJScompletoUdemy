@@ -7,7 +7,6 @@ const pessoas = [
   { nome: "Enzo", idade: 7 },
   { nome: "Yoman", idade: 83 },
   { nome: "Creuza", idade: 63 },
-  { nome: "Ursula", idade: 28 },
   { nome: "Aline", idade: 40 },
 ];
 
