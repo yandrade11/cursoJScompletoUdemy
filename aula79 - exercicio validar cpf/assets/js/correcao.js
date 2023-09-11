@@ -43,16 +43,13 @@ ValidaCPF.prototype.isSequencia = function () {
   return this.cpfLimpo[0].repeat(this.cpfLimpo.length) === this.cpfLimpo;
 };
 
-// FORMA FEITA PELO PROFESSOR
-// const cpf = new ValidaCPF("070.987.720-03");
-
-// cpf.valida() ? console.log("CPF Válido") : console.log("CPF Inválido");
-
 // FORMA DINÂMICA PEGANDO CLICK DO BOTÃO
 const btn = document.querySelector(".botaoEnviar");
 const input = document.querySelector(".inputCPF");
 
 btn.addEventListener("click", () => {
   const cpf = new ValidaCPF(input.value);
-  cpf.valida() ? console.log("CPF Válido") : console.log("CPF Inválido");
+  cpf.valida() 
+  ? console.log("CPF Válido") 
+  : console.log("CPF Inválido");
 });
