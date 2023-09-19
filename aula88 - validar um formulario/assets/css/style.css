@@ -1,0 +1,56 @@
+/* como criar uma variavel em css puro */
+:root {
+  --cor-primaria: rgb(118, 146, 104);
+  --cor-secundaria: rgb(86, 136, 60);
+}
+
+/* como utilizar essa variavel */
+body {
+  background-color: var(--cor-primaria);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container,
+.container-form {
+  background-color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 40px auto 0;
+  max-width: 640px;
+  padding: 20px;
+  text-align: justify;
+}
+
+.container-cpf {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+label,
+button {
+  display: block;
+  font-size: 18px;
+}
+
+input {
+  height: 30px;
+  margin-bottom: 20px;
+  width: -webkit-fill-available;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+li:last-of-type {
+  margin-bottom: 20px !important;
+}
+
+button {
+  margin: 0 auto;
+}
