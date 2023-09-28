@@ -1,4 +1,4 @@
-import ValidaCPF from '../js/ValidaCPF.js';
+import { ValidaCPF } from '../js/ValidaCPF.js';
 
 class Formulario {
   constructor() {
