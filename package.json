@@ -1,0 +1,19 @@
+{
+  "name": "cursojscompletoudemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yandrade11/cursoJScompletoUdemy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yandrade11/cursoJScompletoUdemy/issues"
+  },
+  "homepage": "https://github.com/yandrade11/cursoJScompletoUdemy#readme"
+}
