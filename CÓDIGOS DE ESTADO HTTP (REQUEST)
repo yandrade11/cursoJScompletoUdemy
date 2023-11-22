@@ -1,0 +1,23 @@
+/*
+códigos HTTP:
+
+200 = sucesso
+201 = criado
+202 = aceito
+203 = não-autorizado
+204 = nenhum conteúdo
+205 = reset
+206 = conteúdo parcial
+207 = status multi (WebDAV)
+
+300 = redirecionamento multipla escolha
+301 = movido
+302 = encontrado
+303 = consulte outros
+304 = não modificado
+305 = use proxy
+306 = proxy switch
+307 = redirecionamento temporário
+308 = redirecionamento permanente
+
+*/
