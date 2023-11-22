@@ -1,4 +1,8 @@
-//PROMISSES - 
+//PROMISSES
+//ESTADOS DA PROMISE: 
+//  <pending>: quando o valor que você pediu ainda não está pronto
+//  <fullfilled>: resolvida/sucesso
+//  <rejected>: rejeitada
 
 function random(min, max) {
     //passando segundo (argumento na chamada da função) para milissegundos
