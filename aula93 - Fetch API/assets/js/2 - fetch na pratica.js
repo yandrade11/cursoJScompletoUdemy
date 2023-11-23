@@ -31,6 +31,8 @@ async function carregaPaginaAsync(element) {
         const response = await fetch(href);
 
         if (response.status !== 200) throw new Error('ERRO tratado: ');
+
+        //fetch retorna JSON e tem que transformar em texto para html
         const html = await response.text();
         carregaResultado(html);
     } catch (error) {
