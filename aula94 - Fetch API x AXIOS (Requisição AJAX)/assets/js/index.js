@@ -55,5 +55,9 @@ function carregaDadosPaginaAxios(jsonPessoas) {
     resultado.appendChild(table);
 }
 
+//só pra não dar erro na chamada do Fetch
 function carregaDadosPaginaFetch() {
 }
+
+//OBS IMPORTANTE: o Axios faz exatamente a mesma coisa que o XMLHttpRequest por trás dos panos...
+//você pode verificar isso na coluna TIPO em NETWORK (rede), já o Fetch sai no network como fetch mesmo
