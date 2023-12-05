@@ -1,0 +1,23 @@
+PASSO 1: abrir pasta do projeto onde quer instalar o babel
+PASSO 2: abrir terminal
+PASSO 3: npm install -y
+PASSO 4: npm install --save-dev @babel/cli @babel/preset-env @babel/core
+
+PASSO 5: add node_modules no gitIgnore não queira o babel instalado no git (pra todos baixarem)
+
+PASSO 6: criar script para teste "main.js" 
+PASSO 7: no terminal, digitar: npx babel "NOME ARQUIVO CRIADO" -o "NOME ARQUIVO SAÍDA" --presets=@babel/env
+
+-----------------------------------------------------------
+
+COMO FAZER O BABEL RODAR/TRADUZIR SEMPRE QUE SALVAR O MAIN.js
+PASSO 1: abra o package.json
+PASSO 2: embaixo de "test" adicione uma propriedade chave/valor (nome/chave que quiser, geralmente se usa babel) com o valor sendo: "babel ./main.js (entrada) -o ./bundle.js (saída) --presets=@babel/env -w (recompila ao salvar a main)"
+
+PASSO 3: para deixar o babel executando sempre (assistindo) só digitar "npm run NOME CHAVE" (no caso npm run babel)
+
+-----------------------------------------------------------
+
+*OBS: o que é BUNDLE: arquivo que junta vários scripts e arquivos, geralmente usamos o bundle.js no html
+
+*OBS 2: babel é obsoleto, ele é utilizado pelo webpack que também ja é obsoleto
