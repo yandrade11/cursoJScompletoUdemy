@@ -4,7 +4,7 @@
 // Common JS: forma usada no back-end para import/export de módulos JS
 const path = require("path");
 
-// exportando módulo WEBPACK do Node JS
+// export como módulo WEBPACK do Node JS
 // export é como se fosse um "return/saída" do webpack, todo o resto é só funciona aqui dentro
 module.exports = {
   mode: "production",
