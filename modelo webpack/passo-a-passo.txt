@@ -4,10 +4,12 @@ R:
 
 COMO CRIAR WEBPACK (BOILEPLANT)
 
+
+PASSO 0: criar arquitetura
 PASSO 1: abrir terminal
 PASSO 2: npm init -y (o -y é para não perguntar nada no terminal)
 
-PASSO 3: npm i --save-dev @babel/preset-env @babel/core @babel/cli babel-loader webpack webpack-cli regenerator-runtime core-js@2
+PASSO 3: npm i --save-dev @babel/preset-env @babel/core @babel/cli babel-loader webpack webpack-cli
 
 - i: install
 - --save-dev: salvar nas devDependencies do package.json
@@ -15,5 +17,10 @@ PASSO 3: npm i --save-dev @babel/preset-env @babel/core @babel/cli babel-loader 
 - @babel/core: core do babel
 - @babel/cli: 
 
-- regenerator-runtime: recurso de auto-save e runtime no webpack
-- core-js@2: core do JS na versão 2
+PASSO 4: npm i regenerator-runtime core-js
+
+- regenerator-runtime: recurso de auto-save e runtime (tempo real) no webpack
+- core-js: core do JS na versão mais atualizada
+
+PASSO 5: npm i style-loader css-loader
+PASSO 6: escrever o webpack.config.js

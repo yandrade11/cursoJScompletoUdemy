@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "core-js": "^3.34.0",
-    "regenerator-runtime": "^0.14.0"
+    "css-loader": "^6.8.1",
+    "regenerator-runtime": "^0.14.0",
+    "style-loader": "^3.3.3"
   }
 }

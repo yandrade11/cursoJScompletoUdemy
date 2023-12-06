@@ -17,7 +17,8 @@ module.exports = {
   // utilizando o MÓDULO babel no webpack antes de gerar o bundle
   module: {
     // algumas regras podem ser determinandas com expressão-regular (ER)
-    rules: [{
+    rules: [
+      {
         //exclude: excluir node_modules do bundle, com ER
         exclude: /node_modules/,
 
@@ -27,14 +28,19 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/env"]
-          }
-        }
-      }]
+            presets: ["@babel/env"],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
 
   // mapear erro no arquivo original e não no bundle.js (não precisar ver no arquivo completão compilado)
-  devtool: "source-map"
+  devtool: "source-map",
 };
 
 // mode: 'development': MODO: arquivo gerado mais rapido, sem minificar
