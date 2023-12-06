@@ -15,5 +15,7 @@ PASSO 3: npm i --save-dev @babel/preset-env @babel/core @babel/cli babel-loader 
 - @babel/core: core do babel
 - @babel/cli: 
 
-- regenerator-runtime: recurso de auto-save e runtime no webpack
-- core-js@2: core do JS na versão 2
+PASSO 4: npm i regenerator-runtime core-js
+
+- regenerator-runtime: recurso de auto-save e runtime (tempo real) no webpack
+- core-js: core do JS na versão mais atualizada
