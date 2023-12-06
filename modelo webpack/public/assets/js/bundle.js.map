@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":"AAGAA,MAAM","sources":["webpack://aula96---como-criar-webpack-(boileplant)/./src/index.js"],"sourcesContent":["//1\r\n//2\r\n//3\r\nalert('olá mundo');"],"names":["alert"],"sourceRoot":""}
