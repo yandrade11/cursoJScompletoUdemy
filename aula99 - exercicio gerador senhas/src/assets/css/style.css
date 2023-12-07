@@ -1,27 +1,44 @@
 /* como criar uma variavel em css puro */
 :root {
-    --cor-primaria: rgb(118, 146, 104);
-    --cor-secundaria: rgb(86, 136, 60);
+  --cor-primaria: rgb(118, 146, 104);
+  --cor-secundaria: rgb(86, 136, 60);
 }
 
 /* como utilizar essa variavel */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--cor-primaria);
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-primaria);
+  font-family: sans-serif;
 }
 
 .container {
-    background-color: white;
-    border-radius: 10px;
-    font-size: 20px;
-    margin: 50px auto;
-    max-width: 640px;
-    padding: 20px;
-    text-align: justify;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 50px auto;
+  max-width: 640px;
+  padding: 20px;
+  text-align: justify;
 }
 
 h1 {
+  text-align: center;
+}
+
+p.selecione {
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  width: 30px;
+}
+
+input.symbol {
     text-align: center;
 }
