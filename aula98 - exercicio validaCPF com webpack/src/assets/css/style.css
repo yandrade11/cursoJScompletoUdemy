@@ -1,27 +1,32 @@
 /* como criar uma variavel em css puro */
 :root {
-    --cor-primaria: rgb(118, 146, 104);
-    --cor-secundaria: rgb(86, 136, 60);
+  --cor-primaria: rgb(118, 146, 104);
+  --cor-secundaria: rgb(86, 136, 60);
 }
 
 /* como utilizar essa variavel */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--cor-primaria);
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-primaria);
+  font-family: sans-serif;
 }
 
 .container {
-    background-color: white;
-    border-radius: 10px;
-    font-size: 20px;
-    margin: 50px auto;
-    max-width: 640px;
-    padding: 20px;
-    text-align: justify;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 50px auto;
+  max-width: 640px;
+  padding: 20px;
+  text-align: justify;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+}
+
+input.inputCPF {
+  font-size: 20px;
+  height: 25px;
 }
