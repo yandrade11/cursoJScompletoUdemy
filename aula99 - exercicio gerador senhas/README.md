@@ -1,0 +1,16 @@
+TABELA ASC (CharCode Decimal)
+
+- NÚMEROS:
+48 até 57
+
+- LETRAS MAÍUSCULAS
+65 até 90
+
+- LETRAS MINÚSCULAS
+97 até 122
+
+- SÍMBOLOS
+32 até 47
+58 até 64
+91 até 96
+123 até 126

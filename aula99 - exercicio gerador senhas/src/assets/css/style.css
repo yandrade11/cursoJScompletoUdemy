@@ -40,5 +40,20 @@ input[type="number"] {
 }
 
 input.symbol {
-    text-align: center;
+  text-align: center;
+}
+
+button {
+  display: block;
+  height: 50px;
+  margin: 30px auto 0;
+  font-size: 1em;
+  width: 150px;
+}
+
+.senha-gerada {
+  color: var(--cor-primaria);
+  font-size: 2em;
+  margin: 20px 0 0;
+  text-align: center;
 }
