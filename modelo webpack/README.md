@@ -19,8 +19,12 @@ PASSO 3: npm i --save-dev @babel/preset-env @babel/core @babel/cli babel-loader 
 
 PASSO 4: npm i regenerator-runtime core-js
 
-- regenerator-runtime: recurso de auto-save e runtime (tempo real) no webpack
-- core-js: core do JS na versão mais atualizada
+- regenerator-runtime: recurso para rodar promise/async/await em navegadores antigos
+- core-js: core do JS na versão mais atualizada para rodar em IE6 (e outros browser bem antigos)
 
-PASSO 5: npm i style-loader css-loader
-PASSO 6: escrever o webpack.config.js
+PASSO 5: abrir o index.js e importar regenerator-runtime e core-js
+- import 'core-js/stable';
+- import 'regenerator-runtime/runtime';
+
+PASSO 6: npm i style-loader css-loader
+PASSO 7: escrever o webpack.config.js
