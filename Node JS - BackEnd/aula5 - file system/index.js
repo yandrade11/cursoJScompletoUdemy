@@ -1,4 +1,4 @@
-//requisição FILE SYSTEM
+//requisição FILE SYSTEM: API do NodeJS
 const fs = require("fs").promises;
 const path = require("path");
 
