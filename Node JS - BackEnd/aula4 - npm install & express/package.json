@@ -1,7 +1,7 @@
 {
   "name": "aula4---npm",
   "version": "1.0.0",
-  "description": "",
+  "description": "NPM INSTALL EXPRESS -E = instala ultima versão mas não atualiza automaticamente\r NPM UPGRADE = atualiza versão de tudo que ta instalado no node\r NPM INSTALL --SAVE-DEV = salva no devDependencies (dev)\r NPM INSTALL --SAVE-PROD = salva em Dependencies (produção) \r NPM INSTALL EXPRESS@2.1.0 -E = para instalar a versão específica\r NPM UNINSTALL EXPRESS = desinstala qualquer versão\r NPM LS = mostra no terminal as dependencias do projeto (obs um webpack contém várias dependências)\r NPM OUTDATED = mostra extensões instaladas, versões e qual versão é requerida (wanted)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^2.1.1"
-  }
+  },
+  "devDependencies": {}
 }
