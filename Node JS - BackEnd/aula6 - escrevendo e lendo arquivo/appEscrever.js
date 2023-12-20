@@ -1,10 +1,10 @@
 const path = require("path");
+//importando ler.js em CommonJS
+const escrever = require("./modules/escrever");
 
 //criando caminho
 //const pathFile = path.resolve(__dirname, '..', 'teste.txt'); // para criar(escrever) em texto
 const pathFile = path.resolve(__dirname, "pessoas.json"); //com path.resolve não se coloca "/"
-
-const escrever = require("./modules/escrever");
 
 //criando array de objetos que vai virar um JSON
 const pessoas = [
