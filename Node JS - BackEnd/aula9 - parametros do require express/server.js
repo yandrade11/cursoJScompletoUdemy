@@ -22,10 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (require, response) => {
   response.send(`
     <form action="/" method="POST">
-    Nome: <input type="text" name="nomeUsuario"><br><br>
-    Sobrenome: <input type="text" name="sobrenomeUsuario"><br><br>
-    Idade: <input type="text" name="idadeUsuario"><br><br>
-    <button>Enviar</button>
+      Nome: <input type="text" name="nomeUsuario"><br><br>
+      Sobrenome: <input type="text" name="sobrenomeUsuario"><br><br>
+      Idade: <input type="text" name="idadeUsuario"><br><br>
+      
+      <button>Enviar</button>
     </form>
     `);
 });
