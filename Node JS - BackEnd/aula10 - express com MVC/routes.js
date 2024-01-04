@@ -6,13 +6,12 @@ const express = require("express");
 const route = express.Router();
 
 //importando os controllers
-const homeController = require("./controllers/homeController");
-const contatoController = require("./controllers/contatoController");
+const homeController = require("./src/controllers/homeController");
+const contatoController = require("./src/controllers/contatoController");
 
 // ROTAS DA HOME
 route.get("/", homeController.paginaInicial);
 route.post("/", homeController.trataPost);
-
 
 // ROTAS DE CONTATOS
 route.get("/contato", contatoController.paginaInicial);
