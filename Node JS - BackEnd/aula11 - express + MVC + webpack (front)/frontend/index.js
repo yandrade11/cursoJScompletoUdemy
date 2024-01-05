@@ -2,4 +2,3 @@ import 'core-js/stable';                //para funcionar promise/async/await no 
 import 'regenerator-runtime/runtime';   //para funcionar promise/async/await em outros navegadores antigos
 import './assets/css/style.css';
 
-alert(1);
