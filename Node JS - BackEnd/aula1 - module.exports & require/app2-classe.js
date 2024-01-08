@@ -16,6 +16,6 @@ const path = require("path");
 const axios = require("axios");
 
 // ta comentado pq o json não existe mais
-// axios("https://www.otaviomiranda.com.br/files/json/pessoas.json")
-//   .then((response) => console.log(response.data))
-//   .catch((error) => console.log(error));
+axios("https://www.otaviomiranda.com.br/")
+  .then((response) => console.log(response.data))
+  .catch((error) => console.log(error));
