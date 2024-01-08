@@ -4,7 +4,7 @@ module.exports = (req, res, next) => {
     //ALTERANDO VALOR INTERCEPTADO, ANTES DE REGISTRAR
     req.body.cliente = req.body.cliente.replace(
       "Andrade",
-      "não andrade, Bittencourt"
+      "não andrade, Yuri."
     );
     console.log(`Você postou: ${req.body.cliente}`);
   }
