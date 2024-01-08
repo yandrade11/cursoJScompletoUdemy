@@ -1,4 +1,3 @@
-//na controller é necessário sempre exportar para ser importado na router
 exports.paginaInicial = (req, res, next) => {
   res.render("index");
   console.log("\nRespondendo ao cliente...");
@@ -9,4 +8,10 @@ exports.paginaInicial = (req, res, next) => {
 
   //você também pode executar uma função/classe DEPOIS da requisição ser devolvida (exemplo no route.js)
   next();
+};
+
+//pegando resposta do middleware para tratar 
+exports.trataPost = (req, res) => {
+  res.send(req.body);
+  return;
 };

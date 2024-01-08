@@ -7,13 +7,6 @@ Por exemplo:
 
 ---
 
-COMO USAR?
-ESPECÍFICO (ROTA E GET): chamar função/classe no route.get('/', meuMiddleware, homeController.paginaInicial, meuMiddleware);
-
-SERVIDOR (todas as rotas chamarão esse middleware): 
-
----
-
 COOKIE: salvar registros (login por exemplo) no navegador
 SESSION: salvar registros no banco, na sessão daquele usuário
 

@@ -16,14 +16,15 @@ function meuMiddleware(req, res, next) {
 function ultimoMiddleware(req, res, next) {
   console.log("Middleware após a requisição");
   console.log(
-    `ÚLTIMO MIDDLEWARE: Olha o que tem na req.session.nome: ${req.session.nome}\n`
+    `ÚLTIMO MIDDLEWARE: Olha o que tem na req.session.nome: ${req.session.nome}`
   );
 }
 
-
-
 // ROTAS DA HOME
 route.get("/", meuMiddleware, homeController.paginaInicial, ultimoMiddleware);
+
+// ROTA TRATA POST
+route.post("/", homeController.trataPost);
 
 //exportando a rota
 module.exports = route;
