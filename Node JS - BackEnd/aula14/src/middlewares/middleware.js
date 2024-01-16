@@ -19,4 +19,4 @@ exports.middlewareGlobal = (req, res, next) => {
   next();
 };
 
-//NÃO TA FUNCIONANDO QUANDO BOTO APP.USE(middlewareGlobal) NO SERVER
+//NÃO TA FUNCIONANDO QUANDO BOTO APP.USE(middlewareGlobal) NO SERVER.js

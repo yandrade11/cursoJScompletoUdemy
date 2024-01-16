@@ -20,7 +20,7 @@ mongoose
 const session = require("express-session");
 
 //
-const MongoStore = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 
 const routes = require("./routes");
@@ -50,7 +50,7 @@ app.set("views", path.resolve(__dirname, "src", "views"));
 app.set("view engine", "ejs");
 
 //middleware próprio
-app.use(middlewareGlobal);
+// app.use(middlewareGlobal);
 app.use(routes);
 
 //QUANDO APP TIVER 'PRONTO', FAÇA O QUE QUISER...
