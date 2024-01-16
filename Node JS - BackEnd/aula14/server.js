@@ -1,5 +1,6 @@
 //IMPORTANDO DOTENV PARA GERENCIAR ACESSO
 require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -33,7 +34,7 @@ app.use(express.static("./public"));
 const sessionConfig = session({
   //como se fosse um serialkey
   secret: "ajghsd7iawdasda",
-  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -48,6 +49,8 @@ app.use(flash());
 app.set("views", path.resolve(__dirname, "src", "views"));
 app.set("view engine", "ejs");
 
+//middleware próprio
+app.use(middlewareGlobal);
 app.use(routes);
 
 //QUANDO APP TIVER 'PRONTO', FAÇA O QUE QUISER...
