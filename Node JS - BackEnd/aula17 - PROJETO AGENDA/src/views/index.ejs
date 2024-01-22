@@ -1,0 +1,33 @@
+<!-- INCLUINDO (INCLUDE) HEADER -->
+<%- include('includes/head'); %>
+<section class="container">
+  <h1>
+    <!-- TAGS DE EJS PARA USAR JS -->
+
+    <!-- IF NO EJS: verificando se titulo existe, se não passa outra coisa -->
+    <% if (typeof titulo !== 'undefined' ) { %> <%- titulo %> <% } else { %> O
+    título não existe. <% } %>
+  </h1>
+
+  <!-- FOREACH NO EJS (OBS: para tirar comentário tirar '#') -->
+  <!-- <h2>
+    <%# numeros.forEach(num => { %> <%#= num %><br />
+    <%# }); %>
+  </h2> -->
+
+  <!-- VARIÁVEL LOCAL CRIADA NO MIDDLEWARE, FUNCIONA PRA QUALQUER PÁGINA -->
+  <h3><%= umaVariavelLocal %></h3>
+
+  <form action="/" method="post">
+    <label for="">Nome</label>
+    <input type="text" name="nomeCliente" id="" />
+    <br />
+    <label for="">Sobrenome</label>
+    <input type="text" name="sobrenomeCliente" id="" />
+    <br /><br />
+    <button>Enviar</button>
+  </form>
+</section>
+
+<!-- INCLUINDO (INCLUDE) FOOTER -->
+<%- include('includes/footer'); %>

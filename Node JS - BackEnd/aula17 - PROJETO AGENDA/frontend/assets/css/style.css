@@ -1,0 +1,32 @@
+/* como criar uma variavel em css puro */
+:root {
+    --cor-primaria: rgb(118, 146, 104);
+    --cor-secundaria: rgb(86, 136, 60);
+}
+
+/* como utilizar essa variavel */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-primaria);
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 50px auto;
+    max-width: 640px;
+    padding: 20px;
+    text-align: justify;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* para fazer qualquer coisa da pasta 'frontend' funcionar, tem que rodar o npm run dev */
+input[type="text"]:first-of-type {
+    margin-left: 50px;
+}
