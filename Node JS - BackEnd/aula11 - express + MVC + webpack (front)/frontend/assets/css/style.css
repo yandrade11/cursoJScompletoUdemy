@@ -25,3 +25,8 @@ body {
 h1 {
     text-align: center;
 }
+
+/* pq esse css não ta pegando? */
+input[type="text"]:first-of-type {
+    margin-left: 50px;
+}

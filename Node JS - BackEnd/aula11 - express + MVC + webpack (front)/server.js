@@ -22,23 +22,33 @@ const session = require("express-session");
 
 //sessão salva no BD, para não esgotar memória
 const MongoStore = require("connect-mongo");
+
+//flash messages assim que são lidas somem (são salvas em sessão apenas)
 const flash = require("connect-flash");
 
 const routes = require("./routes");
+
+//recomenda-se utilizar path para o caminho sempre ser dinâmico e não dar erro na aplicação por ter mudado o caminho de algum arquivo
 const path = require("path");
+
+//desestruturação só funciona pq no arquivo "middleware.js" a única função exportada é a middlewareGlobal
 const { middlewareGlobal } = require("./src/middlewares/middleware");
 
-//dizer pro express salvar os get no navegador
+//permite POSTAR formulários para a nossa aplicação
 app.use(express.urlencoded({ extended: true }));
 
-//apontar caminho RELATIVO da pasta de estáticos
+//fazer PARSE de JSON pra dentro da aplicação
+app.use(express.json());
+
+//apontar caminho RELATIVO da pasta de estáticos (onde ficam os bundles)
+//CAMINHO RELATIVO: se mudarem nome ou lugar da pasta o app para de funcionar
 app.use(express.static("./public"));
 
-//configurando a sessão
+//CONFIGURANDO A SESSÃO
 const sessionConfig = session({
-  //secret: como se fosse um serialkey
+  //SECRET: como se fosse um serialkey
   secret: "ajghsd7iawdasda",
-  //store: fazendo conexão
+  //STORE: fazendo conexão buscando dados necessários (login, senha, etc...) no .env
   store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
   resave: false,
   saveUninitialized: false,
@@ -51,13 +61,15 @@ const sessionConfig = session({
 app.use(sessionConfig);
 app.use(flash());
 
+//VIEWS: arquivos que são renderizados na tela (HTML, EJS, etc...)
 //apontar caminho ABSOLUTO da views para o express
+//CAMINHO ABSOLUTO: dinâmico
 app.set("views", path.resolve(__dirname, "src", "views"));
 
-//apontando pro express qual engine usar
-//OBS: ejs é o que mais se assemelha com HTML
+//Engine utilizada para renderizar arquivo esse EJS em HTML
 //essa engine permite utilizar if, for, echo (print na tela), etc...
 app.set("view engine", "ejs");
+//OBS: EJS é o que mais se assemelha com HTML
 
 //middleware próprio
 app.use(middlewareGlobal);
