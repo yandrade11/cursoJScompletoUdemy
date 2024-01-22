@@ -1,8 +1,10 @@
+/* como criar uma variavel em css puro */
 :root {
     --cor-primaria: rgb(118, 146, 104);
     --cor-secundaria: rgb(86, 136, 60);
 }
 
+/* como utilizar essa variavel */
 body {
     margin: 0;
     padding: 0;

@@ -10,7 +10,13 @@ exports.paginaInicial = (req, res) => {
   //     `);
 
   //agora com view faremos assim e o html em sí vai ficar dentro de views
-  res.render("index");
+  res.render("index", {
+    //uma forma de jogar conteúdo na view index
+    titulo:
+      'Modelo <span style="color: red">MVC</span> + <span style="color: #e7c303">Express</span> + <span style="color: green">Webpack.</span>',
+    // numeros: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  });
+  return;
 };
 
 exports.trataPost = (req, res) => {
