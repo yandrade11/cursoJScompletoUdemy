@@ -24,6 +24,7 @@
     "helmet": "^7.1.0",
     "middleware": "^1.0.0",
     "mongoose": "^8.1.0",
+    "npm": "^10.3.0",
     "path": "^0.12.7",
     "regenerator-runtime": "^0.14.0",
     "style-loader": "^3.3.3"
