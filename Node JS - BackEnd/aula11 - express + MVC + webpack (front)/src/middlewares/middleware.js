@@ -9,6 +9,10 @@ module.exports = (req, res, next) => {
   //   console.log(`Você postou: ${req.body.cliente}`);
   // }
 
+  //variavel local criada sem rota, num middleware global (pode ser usado em qualquer página)
+  res.locals.umaVariavelLocal =
+    "Este é o valor da variável local no middleware.";
+
   //nunca esquecer de usar o next quando tiver usando um middleware
   next();
 };

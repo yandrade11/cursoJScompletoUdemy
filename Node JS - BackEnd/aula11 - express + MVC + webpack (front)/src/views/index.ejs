@@ -5,18 +5,18 @@
     <!-- TAGS DE EJS PARA USAR JS -->
 
     <!-- IF NO EJS: verificando se titulo existe, se não passa outra coisa -->
-    <% if (typeof titulo !== 'undefined' ) { %> <%= titulo %> <% } else { %> O
+    <% if (typeof titulo !== 'undefined' ) { %> <%- titulo %> <% } else { %> O
     título não existe. <% } %>
   </h1>
 
-  <!-- FOREACH NO EJS -->
-  <h2>
-    <% numeros.forEach(num => { %> <%= num %><br />
-    <% }); %>
-  </h2>
+  <!-- FOREACH NO EJS (OBS: para tirar comentário tirar '#') -->
+  <!-- <h2>
+    <%# numeros.forEach(num => { %> <%#= num %><br />
+    <%# }); %>
+  </h2> -->
 
   <!-- VARIÁVEL LOCAL CRIADA NO MIDDLEWARE, FUNCIONA PRA QUALQUER PÁGINA -->
-  <h3><%= umaVariavelLocal %></h3>
+  <!-- <h3><%#= umaVariavelLocal %></h3> -->
 
 </section>
 
