@@ -1,33 +1,32 @@
-<!-- INCLUINDO (INCLUDE) HEADER -->
-<%- include('includes/head'); %>
-<section class="container">
-  <h1>
-    <!-- TAGS DE EJS PARA USAR JS -->
+<%- include('includes/head') %> <%- include('includes/navbar') %>
 
-    <!-- IF NO EJS: verificando se titulo existe, se não passa outra coisa -->
-    <% if (typeof titulo !== 'undefined' ) { %> <%- titulo %> <% } else { %> O
-    título não existe. <% } %>
-  </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Agenda</h1>
+      <p class="text-center lead">Seus contatos estão abaixo:</p>
 
-  <!-- FOREACH NO EJS (OBS: para tirar comentário tirar '#') -->
-  <!-- <h2>
-    <%# numeros.forEach(num => { %> <%#= num %><br />
-    <%# }); %>
-  </h2> -->
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-danger">Um erro qualquer</div>
+        </div>
+      </div>
 
-  <!-- VARIÁVEL LOCAL CRIADA NO MIDDLEWARE, FUNCIONA PRA QUALQUER PÁGINA -->
-  <h3><%= umaVariavelLocal %></h3>
+      <div class="responsive-table">
+        <table class="table">
+          <tr>
+            <td>Yuri</td>
+            <td>Andrade</td>
+            <td>(21)99999-9999</td>
+            <td>yuri.g.andrade@gmail.com</td>
+            <td>Estrada de Jacarepaguá, 5573</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
 
-  <form action="/" method="post">
-    <label for="">Nome</label>
-    <input type="text" name="nomeCliente" id="" />
-    <br />
-    <label for="">Sobrenome</label>
-    <input type="text" name="sobrenomeCliente" id="" />
-    <br /><br />
-    <button>Enviar</button>
-  </form>
-</section>
-
-<!-- INCLUINDO (INCLUDE) FOOTER -->
-<%- include('includes/footer'); %>
+<%- include('includes/footer') %>
