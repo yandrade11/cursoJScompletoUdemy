@@ -24,8 +24,15 @@ const flash = require("connect-flash");
 
 const routes = require("./routes");
 const path = require("path");
+
+//importando helmet (praticas de segurança express)
+const helmet = require("helmet");
+
+//importando CSRF (impede formularios externos na nossa base de dados)
+const csrf = require("csurf");
 const middlewareGlobal = require("./src/middlewares/middleware");
 
+app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./public"));
 
@@ -47,6 +54,8 @@ app.use(flash());
 
 app.set("views", path.resolve(__dirname, "src", "views"));
 app.set("view engine", "ejs");
+
+app.use(csrf());
 
 //middleware próprio
 app.use(middlewareGlobal);
