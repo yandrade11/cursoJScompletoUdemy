@@ -1,11 +1,12 @@
 //IMPORTANDO DOTENV PARA GERENCIAR ACESSO
 require("dotenv").config();
 
+//IMPORTS
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-//process.env.CONNECTIONSTRING: acessa valor da CONNECTIONSTRING no .env
+//process.env.CONNECTIONSTRING: acessa dados da CONNECTIONSTRING (login, senha, emails, etc...) no .env para fazer CONEXÃO
 mongoose
   .connect(process.env.CONNECTIONSTRING)
   .then(() => {
@@ -16,15 +17,16 @@ mongoose
     console.log(`${Error}: não foi possível conectar a base de dados.`)
   );
 
-//salva sessão na memória
+//salva sessão na memória (cookie)
 const session = require("express-session");
 
+//sessão salva no BD, para não esgotar memória
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 
 const routes = require("./routes");
 const path = require("path");
-const middlewareGlobal = require("./src/middlewares/middleware");
+const { middlewareGlobal } = require("./src/middlewares/middleware");
 
 //dizer pro express salvar os get no navegador
 app.use(express.urlencoded({ extended: true }));
@@ -62,8 +64,10 @@ app.use(middlewareGlobal);
 //dizer pro express usar suas rotas
 app.use(routes);
 
-
-app.listen(3000, () => {
-  console.log("Acessar http://localhost:3000");
-  console.log("Servidor executando na porta 3000...");
+//após conectado, está 'pronto' para escutar requisições ao banco
+app.on("pronto", () => {
+  app.listen(3000, () => {
+    console.log("Acessar http://localhost:3000");
+    console.log("Servidor executando na porta 3000...");
+  });
 });
