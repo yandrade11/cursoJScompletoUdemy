@@ -23,6 +23,11 @@ exports.paginaInicial = (req, res) => {
 };
 
 exports.trataPost = (req, res) => {
+  // res.send(
+  //   "Formulário enviado com sucesso <br><br>" +
+  //     `Nome: ${req.body.nomeCliente}<br>` +
+  //     `Sobrenome: ${req.body.sobrenomeCliente}`
+  // );
   res.render("trataPost");
   return;
 };
