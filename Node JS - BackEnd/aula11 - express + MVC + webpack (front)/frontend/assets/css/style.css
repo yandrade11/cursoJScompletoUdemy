@@ -26,7 +26,7 @@ h1 {
     text-align: center;
 }
 
-/* pq esse css não ta pegando? */
+/* para fazer qualquer coisa da pasta 'frontend' funcionar, tem que rodar o npm run dev */
 input[type="text"]:first-of-type {
     margin-left: 50px;
 }

@@ -1,5 +1,6 @@
 //na controller é necessário sempre exportar para ser importado na router
 exports.paginaInicial = (req, res) => {
+  //SEND: substitui o html da pagina inicial
   // res.send(`
   //         <form action="/" method="POST">
   //             Nome: <input type="text" name="nomeCliente"><br><br>
@@ -9,7 +10,7 @@ exports.paginaInicial = (req, res) => {
   //         </form>
   //     `);
 
-  //agora com view faremos assim e o html em sí vai ficar dentro de views
+  //RENDER: tendo uma view (HTML), o render adiciona o que você quiser na página inicial via EJS
   res.render("index", {
     //uma forma de jogar conteúdo na view index
     titulo:
@@ -19,6 +20,7 @@ exports.paginaInicial = (req, res) => {
   return;
 };
 
+//descobrir para onde vai esse POST no mongoDB (site)
 exports.trataPost = (req, res) => {
   res.send(
     "Formulário enviado com sucesso <br><br>" +
