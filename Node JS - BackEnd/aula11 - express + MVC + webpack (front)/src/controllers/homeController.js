@@ -1,3 +1,4 @@
+//CONTROLLER: definir quais MODELS e quais VIEWS serão utilizados na ROTA (página) escolhida
 //na controller é necessário sempre exportar para ser importado na router
 exports.paginaInicial = (req, res) => {
   //SEND: substitui o html da pagina inicial

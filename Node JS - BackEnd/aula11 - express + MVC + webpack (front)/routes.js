@@ -1,4 +1,4 @@
-//ROUTER: aqui não fazemos mais as funções, apenas apontamos a exportamos a route e importamos a controller
+//ROUTER: aqui decidimos quais CONTROLLERS controlarão as rotas (páginas)
 
 const express = require("express");
 
