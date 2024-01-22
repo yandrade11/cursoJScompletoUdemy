@@ -1,4 +1,4 @@
-//OBS: dessa forma tem que tirar o "{}" do import 
+//OBS: dessa forma tem que tirar o "{}" do import no server
 
 // module.exports = (req, res, next) => {
 //   //INTERCEPTANDO O VALOR QUE USUÁRIO DIGITOU
