@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!-- INCLUINDO (INCLUDE) HEADER -->
+<%- include('includes/head'); %>
+<section class="container">
+  <h1>
+    <!-- TAGS DE EJS PARA USAR JS -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IF NO EJS: verificando se titulo existe, se não passa outra coisa -->
+    <% if (typeof titulo !== 'undefined' ) { %> <%= titulo %> <% } else { %> O
+    título não existe. <% } %>
+  </h1>
 
-    <title>Projeto Modelo</title>
-</head>
+  <!-- FOREACH NO EJS -->
+  <h2>
+    <% numeros.forEach(num => { %> <%= num %><br />
+    <% }); %>
+  </h2>
 
-<body>
+  <!-- VARIÁVEL LOCAL CRIADA NO MIDDLEWARE, FUNCIONA PRA QUALQUER PÁGINA -->
+  <h3><%= umaVariavelLocal %></h3>
 
-    <section class="container">
-        <h1>Modelo Webpack.</h1>
-    </section>
+</section>
 
-    <script src="./assets/js/bundle.js"></script>
-
-</body>
-
-</html>
+<!-- INCLUINDO (INCLUDE) FOOTER -->
+<%- include('includes/footer'); %>

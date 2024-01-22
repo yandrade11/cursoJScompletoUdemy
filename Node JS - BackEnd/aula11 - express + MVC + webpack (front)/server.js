@@ -4,7 +4,6 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const express = require("express");
 
 //process.env.CONNECTIONSTRING: acessa valor da CONNECTIONSTRING no .env
 mongoose
