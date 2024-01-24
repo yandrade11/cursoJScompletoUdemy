@@ -1,0 +1,58 @@
+<%- include('includes/head') %> <%- include('includes/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Criar conta ou Entrar</h1>
+      <p class="text-center lead">Faça login ou cria uma conta.</p>
+
+      <div class="row">
+        <div class="col-lg">
+          <h4>Faça seu cadastro</h4>
+          <p>Se você ainda não tem conta, preencha o formulário abaixo:</p>
+          <form action="/login/register" method="POST">
+            <div class="form-group">
+              <label name="email">E-mail:</label>
+              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Digite seu email">
+              <small id="emailHelp" class="form-text text-muted">Nunca compartilhe seu email/senha.</small>
+            </div>
+            <div class="form-group">
+              <label name="password">Senha:</label>
+              <input type="password" class="form-control" placeholder="Digite sua senha">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Criar conta</button>
+          </form>
+        </div>
+
+        <div class="col-lg">
+          <h4>Faça seu login</h4>
+          <p>Se você já tem uma conta, faça login abaixo:</p>
+
+          <form action="/login/validate" method="POST">
+            <div class="form-group">
+              <label name="email">E-mail:</label>
+              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Digite seu email">
+              <small id="emailHelp" class="form-text text-muted">Nunca compartilhe seu email/senha.</small>
+            </div>
+            <div class="form-group">
+              <label name="password">Senha:</label>
+              <input type="password" class="form-control" placeholder="Digite sua senha">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Manter conectado</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>
