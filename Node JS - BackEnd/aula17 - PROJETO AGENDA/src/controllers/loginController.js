@@ -7,10 +7,9 @@ exports.index = (req, res) => {
 exports.register = function (req, res) {
   //instanciando classe e passando os dados digitados como argumento
   const login = new Login(req.body);
-
+  login.register();
   //passando dados por dentro da classe
   res.send(login.body);
-  //   res.send("olá");
 };
 
 // exports.validate = (req, res) => {
