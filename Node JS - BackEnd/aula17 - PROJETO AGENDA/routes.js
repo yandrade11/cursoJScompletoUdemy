@@ -10,7 +10,9 @@ const loginController = require("./src/controllers/loginController");
 route.get("/", homeController.index);
 
 // ROTAS DE LOGIN
-route.get('/login/index', loginController.index);
+route.get('/login/', loginController.index);
+route.get('/login/register', loginController.register);
+// route.get('/login/validate', loginController.validate);
 
 
 // ROTAS DE CONTATOS
