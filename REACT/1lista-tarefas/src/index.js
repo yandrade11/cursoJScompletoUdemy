@@ -7,11 +7,10 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 // import reportWebVitals from "./reportWebVitals";
 
-
-//antigamente (epoca da aula) você podia renderizar diretamente com ReactDOM.render passando classe/função APP e rota como argumento
+// antigamente (epoca da aula) você podia renderizar diretamente com ReactDOM.render passando classe/função APP e rota como argumento
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-//hoje em dia, você cria uma variável root (que é a rota) e depois renderiza a variável passando classe/função APP e rota como argumento
+// hoje em dia, você cria uma variável root (que é a rota) e depois renderiza a variável passando classe/função APP e rota como argumento
 root.render(
   <React.StrictMode>
     <App />

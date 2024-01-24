@@ -2,26 +2,34 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
+    node: true,
   },
-  extends: 'airbnb',
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: [
-        '.eslintrc.{js,cjs}',
-      ],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
   ],
-  parser: 'babel-eslint',
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+  },
+  parser: "@babel/eslint-parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "prettier", "react-hooks"],
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
   rules: {
+    "react/react-in-jsx-scope": "off",
   },
 };

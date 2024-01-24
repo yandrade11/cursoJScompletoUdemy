@@ -1,8 +1,8 @@
-//IMPORTS
+// IMPORTS
 import React from "react";
 import "./App.css";
 
-//função que retorna JSX
+// função que retorna JSX
 export default function App() {
   return <h1>Hello world</h1>;
 }
@@ -20,5 +20,5 @@ export default function App() {
 //   );
 // }
 
-//EXPORT
+// EXPORT
 // export default App;
