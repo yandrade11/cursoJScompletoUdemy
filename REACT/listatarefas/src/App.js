@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+// IMPORTS
+import React from 'react';
 import './App.css';
 
-function App() {
+// função que retorna JSX
+export default function App() {
+  //não é possível colocar mais de um elemento no return do JSX, mas você pode englobar tudo numa <div> ou <>.
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Hello world</h1>
+      <p>Lorem impsum</p>
+    </>
   );
 }
 
-export default App;
+// function App() {
+//   return (
+//     //não é HTML, é JSX
+//     <div className="App">
+//       <header className="App-header">
+//         <p>
+//           Hello World!
+//         </p>
+//       </header>
+//     </div>
+//   );
+// }
+
+// EXPORT
+// export default App;
