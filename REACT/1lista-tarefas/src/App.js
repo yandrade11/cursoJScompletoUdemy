@@ -1,15 +1,22 @@
 // IMPORTS
+import Main from './components/Main';
+
+//desde o react v17 não é mais necessário a importação explícita
 import React from 'react';
 import './App.css';
 
-// função que retorna JSX
+// COMPONENTE STATELESS (função sem estado): retorna JSX
 export default function App() {
-  //não é possível colocar mais de um elemento no return do JSX, mas você pode englobar tudo numa <div> ou <>.
+  //não é possível colocar mais de um elemento no return do JSX
+  //mas você pode englobá-las em qualquer outra tag (div por exemplo)
   return (
-    <>
-      <h1>Hello world</h1>
-      <p>Lorem impsum</p>
-    </>
+    //TAG DE FRAGMENTS: <> </>
+    // <>
+    //   <h1>Hello world</h1>
+    //   <p>Lorem impsum</p>
+    // </>
+
+    <Main />
   );
 }
 
