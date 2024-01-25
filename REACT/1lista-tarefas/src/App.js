@@ -13,18 +13,5 @@ export default function App() {
   );
 }
 
-// function App() {
-//   return (
-//     //não é HTML, é JSX
-//     <div className="App">
-//       <header className="App-header">
-//         <p>
-//           Hello World!
-//         </p>
-//       </header>
-//     </div>
-//   );
-// }
-
-// EXPORT
+// EXPORT (outra forma)
 // export default App;
