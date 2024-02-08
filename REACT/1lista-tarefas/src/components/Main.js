@@ -4,12 +4,9 @@
 import React, { Component } from 'react';
 import './Main.css';
 
-// Form
-//importando react-icons para utilizar no browser
-import { FaPlus } from 'react-icons/fa';
-
-// Tarefas
-import { FaEdit, FaWindowClose } from 'react-icons/fa';
+//importando index.js e Form.css da pasta Form
+import Form from './Form';
+import Tarefas from './Tarefas';
 
 //classe Main herdando "Component" (e se transformando em "filha")
 export default class Main extends Component {
@@ -121,44 +118,18 @@ export default class Main extends Component {
       <div className="main">
         <h1>Lista de tarefas</h1>
 
-        <form onSubmit={this.handleSubmit} action="#" className="form">
-          {/* para usar JS no JSX usar "{}" */}
-          {/* onChange: ao mudar algo no input, chama função handleChange */}
-          <input
-            onChange={this.handleChange}
-            placeholder="Digite aqui sua tarefa"
-            type="text"
-            // repare que no value estou chamando o STATE sem aspas
-            value={novaTarefa}
-          />
-          <button type="submit" tabIndex={0}>
-            {/* chamando FaPlus que foi importado do react-icons*/}
-            <FaPlus />
-          </button>
-        </form>
+        <Form
+          //PROPS = argumento em JSX
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          novaTarefa={novaTarefa}
+        />
 
-        {/* pegando o valor da propriedade do STATE para o h2 */}
-        {/* <h2>{tarefas}</h2> */}
-
-        <ul className="tarefas">
-          {tarefas.map((tarefa, index) => (
-            //KEY: serve como uma INDEX para o REACT, nesse caso ele usa a própria tarefa (e depois vai tratar pra não ter tarefa igual)
-            <li key={index}>
-              {`${index + 1} - ${tarefa}`}
-              <span>
-                <FaEdit
-                  //como os métodos tem 2 params, tem que escrever assim o invés de onClick={this.handleEdit}
-                  onClick={(event) => this.handleEdit(event, index)}
-                  className="edit"
-                />
-                <FaWindowClose
-                  onClick={(event) => this.handleDelete(event, index)}
-                  className="delete"
-                />
-              </span>
-            </li>
-          ))}
-        </ul>
+        <Tarefas
+          handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
+          tarefas={tarefas}
+        />
       </div>
     );
   }
