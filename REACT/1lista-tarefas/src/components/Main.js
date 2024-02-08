@@ -18,7 +18,36 @@ export default class Main extends Component {
     //inicializando um STATE
     novaTarefa: '',
     tarefas: [],
+    indexEdicao: -1, // "-1" = não to editando nada
   };
+
+  //SALVANDO NO LOCALSTORAGE
+
+  //executado uma vez para montar o tarefas através do localStorage
+  componentDidMount() {
+    //analisa uma JSON de string e retorna o valor ou objeto
+    const tarefas = JSON.parse(localStorage.getItem('tarefas'));
+
+    if (!tarefas) return;
+
+    this.setState({ tarefas });
+  }
+
+  //método que atualiza a cada mudança de estado
+  //prevState.novaTarefa: estado anterior à novaTarefa
+  componentDidUpdate(prevProps, prevState) {
+    //descomenta para ver funcionando
+    // console.log(this.state.novaTarefa);
+    // console.log(prevState.novaTarefa);
+
+    const { tarefas } = this.state;
+
+    //ainda não teve mudança
+    if (tarefas === prevState.tarefas) return;
+
+    //após update, convertendo em JSON de string e salvando no localStorage
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
+  }
 
   //captura valor digitado no input e salva temporariamente no state
   //OBS: como não temos constructor, consequentemente nem this, fazemos o método com arrow function para conservar a referência do this dentro do escopo da classe (da um .bind(Main))
@@ -34,29 +63,41 @@ export default class Main extends Component {
     //previne envio do form (atualizar a página)
     event.preventDefault();
 
-    const { tarefas } = this.state;
+    const { tarefas, indexEdicao } = this.state;
     let { novaTarefa } = this.state;
     novaTarefa = novaTarefa.trim();
 
-    //se o index de novaTarefa estiver dentro do array tarefas
+    // não permitir tasks iguais
     // if (tarefas.indexOf(novaTarefa) !== -1) return;
 
     //como eu não posso editar o estado tarefas diretamente: clono ela para uma nova variável
-    const clonaTarefas = [...tarefas, novaTarefa];
+    const clonaTarefas = [...tarefas];
 
-    //depois de clonar tarefas, eu jogo
-    this.setState({
-      //SPREAD OPERATOR: desestrutura array e copia exatamente igual
-      tarefas: [...clonaTarefas],
-    });
+    if (indexEdicao === -1) {
+      //depois de clonar tarefas, eu jogo
+      this.setState({
+        //SPREAD OPERATOR: desestrutura array e copia exatamente igual
+        tarefas: [...clonaTarefas, novaTarefa],
+        novaTarefa: '', //limpar input.value após o clique
+      });
+    } else {
+      clonaTarefas[indexEdicao] = novaTarefa;
 
-    //limpa input
-    const inputText = document.querySelector('input');
-    inputText.value = '';
+      this.setState({
+        tarefas: [...clonaTarefas],
+        indexEdicao: -1, //ja editei, volta pra estado 'não editando'
+        novaTarefa: '', //limpar input.value após o clique
+      });
+    }
   };
 
   handleEdit = (event, index) => {
-    console.log('edit', index);
+    const { tarefas } = this.state;
+
+    this.setState({
+      indexEdicao: index,
+      novaTarefa: tarefas[index],
+    });
   };
 
   handleDelete = (event, index) => {
@@ -73,7 +114,7 @@ export default class Main extends Component {
   render() {
     // importando valor da propriedade (novaTarefa) do STATE
     // const novaTarefa = this.state.novaTarefa; (se tiver só 1) OU
-    const { /* novaTarefa, */ tarefas } = this.state;
+    const { novaTarefa, tarefas } = this.state;
 
     return (
       //no JSX usamos className pq class é uma palavra reservada do JS
@@ -88,7 +129,7 @@ export default class Main extends Component {
             placeholder="Digite aqui sua tarefa"
             type="text"
             // repare que no value estou chamando o STATE sem aspas
-            // value={novaTarefa} //comentado limpar input após o clique do botão
+            value={novaTarefa}
           />
           <button type="submit" tabIndex={0}>
             {/* chamando FaPlus que foi importado do react-icons*/}
