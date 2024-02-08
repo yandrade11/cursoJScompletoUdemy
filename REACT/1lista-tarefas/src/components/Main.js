@@ -4,12 +4,20 @@
 import React, { Component } from 'react';
 import './Main.css';
 
-//classe Main herdando "Component" (se transforma em "filha")
+// Form
+//importando react-icons para utilizar no browser
+import { FaPlus } from 'react-icons/fa';
+
+// Tarefas
+import { FaEdit, FaWindowClose } from 'react-icons/fa';
+
+//classe Main herdando "Component" (e se transformando em "filha")
 export default class Main extends Component {
   //class fields
   state = {
     //inicializando um STATE
     novaTarefa: '',
+    tarefas: ['Fazer café', 'Beber água', 'Estudar'],
   };
 
   //captura valor digitado no input e salva temporariamente no state
@@ -22,30 +30,48 @@ export default class Main extends Component {
     });
   };
 
-  //funções STATEFULL são geralmente classes e precisam do render(para renderizar algo na tela)
+  //componente STATEFULL são geralmente classes e precisam do render(para renderizar algo na tela)
   render() {
     // importando valor da propriedade (novaTarefa) do STATE
     // const novaTarefa = this.state.novaTarefa; OU
-    const { novaTarefa } = this.state;
+    const { novaTarefa, tarefas } = this.state;
 
     return (
       //no JSX usamos className pq class é uma palavra reservada do JS
       <div className="main">
         <h1>Lista de tarefas</h1>
 
-        <form action="#">
+        <form action="#" className="form">
           {/* para usar JS no JSX usar "{}" */}
           {/* onChange: ao mudar algo no input, chama função handleChange */}
           <input
             onChange={this.handleChange}
             placeholder="Digite aqui sua tarefa"
             type="text"
+            // repare que no value estou chamando o STATE sem aspas
+            value={novaTarefa}
           />
-          <button type="submit">Enviar</button>
-
-          {/* pegando o valor da propriedade do STATE para o h2 */}
-          <h2>{novaTarefa}</h2>
+          <button type="submit">
+            {/* chamando FaPlus que foi importado do react-icons*/}
+            <FaPlus />
+          </button>
         </form>
+
+        {/* pegando o valor da propriedade do STATE para o h2 */}
+        {/* <h2>{tarefas}</h2> */}
+
+        <ul className="tarefas">
+          {tarefas.map((tarefa) => (
+            //KEY: serve como uma INDEX para o REACT, nesse caso ele usa a própria tarefa (e depois vai tratar pra não ter tarefa igual)
+            <li key={tarefa}>
+              {tarefa}
+              <div>
+                <FaEdit className='edit' />
+                <FaWindowClose className='delete' />
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
