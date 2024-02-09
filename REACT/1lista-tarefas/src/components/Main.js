@@ -9,6 +9,7 @@ import Form from './Form';
 import Tarefas from './Tarefas';
 
 //classe Main herdando "Component" (e se transformando em "filha")
+//obsoleto (hoje em dia é mais utilizado function component - HOOKS)
 export default class Main extends Component {
   //class fields
   state = {
@@ -20,7 +21,8 @@ export default class Main extends Component {
 
   //SALVANDO NO LOCALSTORAGE
 
-  //executado uma vez para montar o tarefas através do localStorage
+  //executado apenas uma vez (inicio do app) para montar o tarefas através do localStorage
+  //roda depois do render
   componentDidMount() {
     //analisa uma JSON de string e retorna o valor ou objeto
     const tarefas = JSON.parse(localStorage.getItem('tarefas'));
