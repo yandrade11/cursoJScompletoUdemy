@@ -1,7 +1,7 @@
 //COMPONENTE PRINCIPAL DO APP
 
 //importando react e classe "Component" que será herdado pela classe Main
-import React, { Component } from 'react';
+import React, { Component } from 'react'; //desestruturando o React.Component na Component
 import './Main.css';
 
 //importando index.js e Form.css da pasta Form
