@@ -13,11 +13,14 @@ export default function Tarefas({ tarefas, handleEdit, handleDelete }) {
         <li key={index}>
           {`${index + 1} - ${tarefa}`}
           <span>
+            {/* botão editar */}
             <FaEdit
               //como os métodos tem 2 params, tem que escrever assim o invés de onClick={this.handleEdit}
               onClick={(event) => handleEdit(event, index)}
               className="edit"
             />
+
+            {/* botão deletar */}
             <FaWindowClose
               onClick={(event) => handleDelete(event, index)}
               className="delete"

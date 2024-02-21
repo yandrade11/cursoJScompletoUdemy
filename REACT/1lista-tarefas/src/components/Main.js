@@ -7,6 +7,7 @@ import './Main.css';
 //importando index.js e Form.css da pasta Form
 import Form from './Form';
 import Tarefas from './Tarefas';
+import ValidadorTarefas from './ValidadorTarefas';
 
 //classe Main herdando "Component" (e se transformando em "filha")
 //obsoleto (hoje em dia é mais utilizado function component - HOOKS)
@@ -17,6 +18,8 @@ export default class Main extends Component {
     novaTarefa: '',
     tarefas: [],
     indexEdicao: -1, // "-1" = não to editando nada
+    buscaTarefa: '',
+    mostraTarefa: '',
   };
 
   //SALVANDO NO LOCALSTORAGE
@@ -55,6 +58,34 @@ export default class Main extends Component {
     // NÃO É POSSÍVEL FAZER: this.state.novaTarefa = 'novoValor'
     this.setState({
       novaTarefa: event.target.value,
+    });
+  };
+
+  handleChangeInputValidator = (event) => {
+    this.setState({
+      buscaTarefa: event.target.value,
+    });
+  };
+
+  handleSearch = (event) => {
+    event.preventDefault();
+
+    //não pode chamar o mostraTarefa, pois ele não vai ser tratado, somente setado novamente
+    const { tarefas, buscaTarefa } = this.state;
+
+    //compara se buscaTarefa existe em tarefas
+    const hasTask = tarefas.find((element) => element === buscaTarefa);
+
+    if (!hasTask) {
+      return this.setState({
+        mostraTarefa: 'A tarefa pesquisada não foi encontrada.',
+        buscaTarefa: ''
+      });
+    }
+
+    return this.setState({
+      mostraTarefa: 'A tarefa foi encontrada.',
+      buscaTarefa: ''
     });
   };
 
@@ -113,7 +144,7 @@ export default class Main extends Component {
   render() {
     // importando valor da propriedade (novaTarefa) do STATE
     // const novaTarefa = this.state.novaTarefa; (se tiver só 1) OU
-    const { novaTarefa, tarefas } = this.state;
+    const { novaTarefa, tarefas, buscaTarefa, mostraTarefa } = this.state;
 
     return (
       //no JSX usamos className pq class é uma palavra reservada do JS
@@ -130,7 +161,14 @@ export default class Main extends Component {
         <Tarefas
           handleEdit={this.handleEdit}
           handleDelete={this.handleDelete}
-          tarefas={tarefas}
+          tarefas={tarefas} //não se usa o this pq é state
+        />
+
+        <ValidadorTarefas
+          handleSearch={this.handleSearch}
+          handleChangeInputValidator={this.handleChangeInputValidator}
+          buscaTarefa={buscaTarefa}
+          mostraTarefa={mostraTarefa}
         />
       </div>
     );

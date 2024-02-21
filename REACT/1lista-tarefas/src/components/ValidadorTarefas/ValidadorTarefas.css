@@ -1,0 +1,33 @@
+.form__search input[type='text'] {
+  border: 1px solid #ccc;
+  height: 40px;
+  min-width: 80%;
+  width: 90%;
+}
+
+.form__search button {
+  display: flex;
+
+  align-items: center;
+  border: none;
+  background-color: #4d4b4d;
+  color: #fff;
+  height: 40px;
+  justify-content: center;
+  margin: 10px 0 10px 10px;
+  width: 40px;
+}
+
+section {
+  text-align: center;
+}
+
+li {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  /* transition para as cores do hover trocarem mais suavemente */
+  transition: all 600ms;
+}
